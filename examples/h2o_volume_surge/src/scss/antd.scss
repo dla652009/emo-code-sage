@@ -1,0 +1,169 @@
+$table-cell-padding-y: 2px; // 单元格内边距垂直方向
+
+/* ========== 按钮样式 ========== */
+.ant-btn {
+  border-radius: 6px;
+  font-weight: 400;
+  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.016) !important;
+
+  &:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  &:active {
+    transform: translateY(0) !important;
+  }
+}
+
+.ant-btn-link {
+  padding: 0px 4px;
+  box-shadow: none;
+
+  &:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+/* ========== 分页器样式 ========== */
+.ant-table-pagination.ant-pagination {
+  margin: 0 !important;
+  padding: 10px 16px 12px 0;
+}
+
+/* ========== 表格美化样式 ========== */
+.ant-table-wrapper {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow:
+    0 1px 2px 0 rgba(0, 0, 0, 0.03),
+    0 1px 6px -1px rgba(0, 0, 0, 0.02),
+    0 2px 4px 0 rgba(0, 0, 0, 0.02);
+}
+
+/* ========== 消息提示样式 ========== */
+.ant-message {
+  .ant-message-notice-content {
+    border-radius: 8px;
+    box-shadow:
+      0 6px 16px 0 rgba(0, 0, 0, 0.08),
+      0 3px 6px -4px rgba(0, 0, 0, 0.12),
+      0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  }
+}
+
+.ant-message-custom-content {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+/* ========== 工具类样式 ========== */
+.my-table {
+  .ant-table {
+    /* 单元格基础样式 */
+    .ant-table-cell {
+      padding: #{$table-cell-padding-y} 16px !important;
+      font-size: 14px;
+      color: rgba(0, 0, 0, 0.88);
+      transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+
+    /* 表头样式 */
+    .ant-table-thead {
+      > tr > th {
+        padding: calc(#{$table-cell-padding-y} + 8px) 16px !important;
+      }
+    }
+
+    /* 表格主体样式 */
+    .ant-table-tbody {
+      > tr {
+        transition: background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+        &:hover {
+          > td {
+            background: #f5f5f5 !important;
+          }
+        }
+
+        &:last-child > td {
+          border-bottom: none;
+        }
+
+        > td {
+          border-bottom: 1px solid #f0f0f0;
+          background: #fff;
+        }
+      }
+    }
+
+    /* 表格容器 */
+    .ant-table-container {
+      border-radius: 8px 8px 0 0;
+      padding: 0 16px;
+    }
+
+    /* 表格内容区 */
+    .ant-table-content {
+      border-radius: 8px 8px 0 0;
+    }
+
+    /* 空数据状态 */
+    .ant-empty {
+      padding: 32px 0;
+
+      .ant-empty-description {
+        color: rgba(0, 0, 0, 0.45);
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+/* ========== 表单控件禁用状态样式 ========== */
+/* 输入框禁用状态 */
+.ant-input[disabled],
+.ant-input-number-disabled .ant-input-number-input,
+.ant-picker-input > input[disabled] {
+  color: rgba(0, 0, 0, 0.65) !important;
+}
+
+/* 选择器禁用状态 */
+.ant-select-disabled.ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  color: rgba(0, 0, 0, 0.65) !important;
+}
+
+.ant-select-disabled .ant-select-selection-item {
+  color: rgba(0, 0, 0, 0.65) !important;
+}
+
+/* 文本域禁用状态 */
+.ant-input[disabled],
+textarea.ant-input[disabled] {
+  color: rgba(0, 0, 0, 0.65) !important;
+}
+
+/* 单选框和复选框禁用状态 */
+.ant-radio-disabled .ant-radio-inner::after,
+.ant-checkbox-disabled .ant-checkbox-inner {
+  color: rgba(0, 0, 0, 0.65) !important;
+}
+
+/* 级联选择器禁用状态 */
+.ant-cascader-picker-disabled .ant-cascader-picker-label {
+  color: rgba(0, 0, 0, 0.65) !important;
+}
+
+/* 日期选择器禁用状态 */
+.ant-picker-disabled {
+  .ant-picker-suffix,
+  .ant-picker-input > input[disabled] {
+    color: rgba(0, 0, 0, 0.65) !important;
+  }
+}
+
+.ant-tag {
+  margin: 0;
+}

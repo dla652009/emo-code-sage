@@ -1,0 +1,40 @@
+stages:
+  - build-deploy
+
+variables:
+  # 公共环境变量
+  S3_CMD: aws s3
+  CDN_REFRESH_CMD: aws cloudfront create-invalidation --distribution-id
+
+# 基础任务模板
+.base_template:
+  stage: build-deploy
+  tags:
+    - common-frontend-runner
+  before_script:
+    - n 16
+    - npm config set registry https://registry.npmmirror.com
+    - npm install --legacy-peer-deps
+  script:
+    - npm run build:$BUILD_ENV  # 抽象构建命令
+    - $S3_CMD sync dist/ $S3_PATH/
+    - $CDN_REFRESH_CMD $DISTRIBUTION_ID --paths "/*"
+
+# 具体环境配置
+job-qa:
+  extends: .base_template
+  variables:
+    S3_PATH: "s3://qa-autoads-admin"
+    DISTRIBUTION_ID: "E2DKZDRX4YCQ2R"
+    BUILD_ENV: "test"     # 对应 dev 分支
+  only:
+    - release/dev
+
+job-prod:
+  extends: .base_template
+  variables:
+    S3_PATH: "s3://prod-autoads-admin"
+    DISTRIBUTION_ID: "E17C42HKA4RUB7"
+    BUILD_ENV: "online"    # 对应 master 分支
+  only:
+    - master

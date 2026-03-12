@@ -1,0 +1,39 @@
+{
+  "name": "emo-template-sdk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsup",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "820125507@qq.com",
+  "license": "MIT",
+  "packageManager": "pnpm@10.22.0",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^25.4.0",
+    "@typescript-eslint/eslint-plugin": "^8.57.0",
+    "@typescript-eslint/parser": "^8.57.0",
+    "eslint": "^10.0.3",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "prettier": "^3.8.1",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.57.0",
+    "vitest": "^4.0.18"
+  },
+  "dependencies": {
+    "@vue/compiler-sfc": "^3.5.30",
+    "chalk": "^5.6.2",
+    "commander": "^14.0.3",
+    "consola": "^3.4.2",
+    "cosmiconfig": "^9.0.1",
+    "ejs": "^5.0.1",
+    "fast-glob": "^3.3.3",
+    "ts-morph": "^27.0.2"
+  }
+}
