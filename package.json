@@ -1,13 +1,15 @@
 {
-  "name": "emo-template-sdk",
-  "version": "1.0.0",
-  "description": "",
+  "name": "emo-code-sage",
+  "version": "0.0.1",
+  "description": "code review of web projects.",
   "main": "index.js",
   "scripts": {
     "build": "tsup",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "code review"
+  ],
   "author": "820125507@qq.com",
   "license": "MIT",
   "packageManager": "pnpm@10.22.0",
