@@ -1,12 +1,11 @@
 import { logger } from '../utils/logger';
-import { ProjectScanner } from './scanner/projectScanner';
+import { scanProject } from './scanner/projectScanner';
 import { parseFile } from './parser';
 
 export async function analyzeProject(root: string) {
   // 1.扫描文件
   logger.start(`正在扫描项目: ${root}`);
-  const scanner = new ProjectScanner();
-  const files = await scanner.scan(root);
+  const files = await scanProject(root);
   files.forEach(file => logger.log(` - ${file}`));
   logger.success(`扫描完成，共找到 ${files.length} 个文件`);
 

@@ -66,3 +66,8 @@ export class ProjectScanner {
     }
   }
 }
+
+export function scanProject(root: string) {
+  const scanner = new ProjectScanner();
+  return scanner.scan(root);
+}
