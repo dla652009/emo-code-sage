@@ -1,8 +1,10 @@
 import { SourceFile } from 'ts-morph';
-import { Rule, RuleContext } from '../analyzer/types';
+import { Rule, RuleContext } from '../../analyzer/types';
 
 export const duplicateImportRule: Rule = {
   name: 'duplicate-import',
+  category: 'js',
+  severity: 'warning',
   description: '检测重复 import',
 
   analyze(sourceFile: SourceFile, context: RuleContext) {

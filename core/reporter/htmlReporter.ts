@@ -29,6 +29,7 @@ export class HtmlReporter implements Reporter {
     const sortedGroupedResults = sortGroupedResults(groupedResults).map(([ruleName, issues]) => ({
       ruleName,
       issues,
+      category: issues[0].category,
       severity: issues[0].severity || 'info'
     }));
 

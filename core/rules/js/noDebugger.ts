@@ -1,8 +1,9 @@
 import { SourceFile, SyntaxKind } from 'ts-morph';
-import { Rule, RuleContext } from '../analyzer/types';
+import { Rule, RuleContext } from '../../analyzer/types';
 
 export const noDebuggerRule: Rule = {
   name: 'no-debugger',
+  category: 'js',
   severity: 'error',
   description: '禁止在代码中使用 debugger',
 

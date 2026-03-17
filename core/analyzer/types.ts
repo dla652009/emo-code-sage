@@ -1,7 +1,7 @@
 import { SourceFile, Node } from 'ts-morph';
 
 export type Severity = 'error' | 'warning' | 'info';
-
+export type Category = 'js' | 'ts' | 'vue';
 export interface RuleContext {
   /**
    * 当前分析的文件路径
@@ -21,6 +21,11 @@ export interface Rule {
    * 规则名称
    */
   name: string;
+
+  /**
+   * 类别
+   */
+  category: Category;
 
   /**
    * 规则严重程度
@@ -46,6 +51,11 @@ export interface AnalysisResult {
    * 触发结果的规则名称
    */
   ruleName: string;
+
+  /**
+   * 规则类别
+   */
+  category: Category;
 
   /**
    * 规则严重程度

@@ -98,6 +98,20 @@ export const reportTemplateStr = `<!DOCTYPE html>
     .severity-warning { background-color: var(--warning-color); box-shadow: 0 2px 4px rgba(243, 156, 18, 0.3); }
     .severity-info { background-color: var(--info-color); box-shadow: 0 2px 4px rgba(52, 152, 219, 0.3); }
     
+    .category-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.85em;
+      font-weight: 600;
+      color: #34495e;
+      background-color: #ecf0f1;
+      margin-left: 10px;
+      text-transform: uppercase;
+      border: 1px solid #bdc3c7;
+    }
+
     table {
       width: 100%;
       border-collapse: separate;
@@ -189,6 +203,7 @@ export const reportTemplateStr = `<!DOCTYPE html>
           <h2 class="rule-title">
             <% if (entry.severity === 'error') { %>🔴<% } else if (entry.severity === 'warning') { %>🟡<% } else { %>🔵<% } %>
             &nbsp;<%= entry.ruleName %>
+            <span class="category-badge">📂 <%= entry.category || 'unknown' %></span>
           </h2>
           <span class="severity-badge severity-<%= entry.severity %>"><%= entry.severity %></span>
         </div>

@@ -40,9 +40,10 @@ export class MarkdownReporter implements Reporter {
 
       for (const [ruleName, issues] of sortedEntries) {
         const severity = issues[0].severity;
+        const category = issues[0].category || 'unknown';
         const icon = severity === 'error' ? '🔴' : severity === 'warning' ? '🟡' : '🔵';
 
-        content += `### ${icon} 规则: \`${ruleName}\` (${severity.toUpperCase()})\n\n`;
+        content += `### ${icon} 规则: \`${ruleName}\` | 📂 \`${category.toUpperCase()}\` | (${severity.toUpperCase()})\n\n`;
         content += `> 发现 **${issues.length}** 处违规\n\n`;
         content += `| 📄 文件路径 | 📍 位置 | 💡 描述 |\n`;
         content += `| :--- | :---: | :--- |\n`;

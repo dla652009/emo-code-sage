@@ -1,8 +1,10 @@
 import { SourceFile, SyntaxKind } from 'ts-morph';
-import { Rule, RuleContext } from '../analyzer/types';
+import { Rule, RuleContext } from '../../analyzer/types';
 
 export const noAnyRule: Rule = {
   name: 'no-any',
+  category: 'ts',
+  severity: 'warning',
   description: '检测 any 类型的使用',
 
   analyze(sourceFile: SourceFile, context: RuleContext) {

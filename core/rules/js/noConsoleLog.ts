@@ -1,10 +1,12 @@
 import { SourceFile, SyntaxKind } from 'ts-morph';
-import { Rule, RuleContext } from '../analyzer/types';
+import { Rule, RuleContext } from '../../analyzer/types';
 
 export const noConsoleLogRule: Rule = {
   name: 'no-console-log',
+  category: 'js',
   severity: 'warning',
   description: '禁止在代码中保留 console.log',
+
   analyze(sourceFile: SourceFile, context: RuleContext) {
     // 找到所有的函数调用表达式
     const callExpressions = sourceFile.getDescendantsOfKind(SyntaxKind.CallExpression);

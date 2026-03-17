@@ -1,20 +1,46 @@
 import { Rule } from '../analyzer/types';
-import { noConsoleLogRule } from './noConsoleLog';
-import { noDebuggerRule } from './noDebugger';
-import { unmanagedTimeoutRule } from './noUnmanagedTimeout';
-import { largeFunctionRule } from './largeFunction';
-import { noAnyRule } from './noAny';
-import { duplicateImportRule } from './duplicateImport';
+import { noConsoleLogRule } from './js/noConsoleLog';
+import { noDebuggerRule } from './js/noDebugger';
+import { unmanagedTimeoutRule } from './js/noUnmanagedTimeout';
+import { largeFunctionRule } from './js/largeFunction';
+import { duplicateImportRule } from './js/duplicateImport';
 
-// 将所有的规则汇总在一个数组中暴露出去，方便主流程一次性注册
+import { noAnyRule } from './ts/noAny';
+
+import { largeComponentRule } from './vue/largeComponent';
+import { noDeepWatchRule } from './vue/noDeepWatch';
+import { noDirectDomRule } from './vue/noDirectDom';
+import { noVIfWithVForRule } from './vue/noVIfWithVFor';
+import { noInlineStyleRule } from './vue/noInlineStyle';
+import { tooManyPropsRule } from './vue/tooManyProps';
+
 export const builtinRules: Rule[] = [
   noConsoleLogRule,
   noDebuggerRule,
   unmanagedTimeoutRule,
   largeFunctionRule,
   noAnyRule,
-  duplicateImportRule
+  duplicateImportRule,
+  noDeepWatchRule,
+  noDirectDomRule,
+  noInlineStyleRule,
+  tooManyPropsRule,
+  noVIfWithVForRule,
+  largeComponentRule
 ];
 
 // 同时单独导出，方便其他地方按需引入
-export { noConsoleLogRule, noDebuggerRule, unmanagedTimeoutRule, largeFunctionRule, noAnyRule, duplicateImportRule };
+export {
+  noConsoleLogRule,
+  noDebuggerRule,
+  unmanagedTimeoutRule,
+  largeFunctionRule,
+  noAnyRule,
+  duplicateImportRule,
+  noDeepWatchRule,
+  noDirectDomRule,
+  noInlineStyleRule,
+  tooManyPropsRule,
+  noVIfWithVForRule,
+  largeComponentRule
+};

@@ -1,8 +1,10 @@
 import { SourceFile } from 'ts-morph';
-import { Rule, RuleContext } from '../analyzer/types';
+import { Rule, RuleContext } from '../../analyzer/types';
 
 export const largeFunctionRule: Rule = {
   name: 'large-function',
+  category: 'js',
+  severity: 'warning',
   description: '检测函数过大',
 
   analyze(sourceFile: SourceFile, context: RuleContext) {

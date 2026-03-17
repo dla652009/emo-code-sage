@@ -1,8 +1,9 @@
 import { SourceFile, SyntaxKind } from 'ts-morph';
-import { Rule, RuleContext } from '../analyzer/types';
+import { Rule, RuleContext } from '../../analyzer/types';
 
 export const unmanagedTimeoutRule: Rule = {
   name: 'unmanaged-timeout',
+  category: 'js',
   severity: 'info',
   description: '检测未管理的 setTimeout 调用',
 

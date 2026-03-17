@@ -98,6 +98,20 @@
     .severity-warning { background-color: var(--warning-color); box-shadow: 0 2px 4px rgba(243, 156, 18, 0.3); }
     .severity-info { background-color: var(--info-color); box-shadow: 0 2px 4px rgba(52, 152, 219, 0.3); }
     
+    .category-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.85em;
+      font-weight: 600;
+      color: #34495e;
+      background-color: #ecf0f1;
+      margin-left: 10px;
+      text-transform: uppercase;
+      border: 1px solid #bdc3c7;
+    }
+
     table {
       width: 100%;
       border-collapse: separate;
@@ -154,13 +168,13 @@
 <body>
   <div class="header">
     <h1>🔮 Emo Code Sage 报告</h1>
-    <div class="meta-info">生成时间: 2026/3/17 10:53:21</div>
+    <div class="meta-info">生成时间: 2026/3/17 11:15:50</div>
     <div class="summary-cards">
       <div class="summary-card">
-        <span style="font-size: 1.2em">🔍</span> 发现问题: <strong>47</strong>
+        <span style="font-size: 1.2em">🔍</span> 发现问题: <strong>122</strong>
       </div>
       <div class="summary-card">
-        <span style="font-size: 1.2em">🛡️</span> 涉及规则: <strong>5</strong>
+        <span style="font-size: 1.2em">🛡️</span> 涉及规则: <strong>10</strong>
       </div>
     </div>
   </div>
@@ -173,7 +187,368 @@
         <div class="rule-header">
           <h2 class="rule-title">
             🟡
+            &nbsp;too-many-props
+            <span class="category-badge">📂 vue</span>
+          </h2>
+          <span class="severity-badge severity-warning">warning</span>
+        </div>
+        
+        <table>
+          <thead>
+            <tr>
+              <th width="40%">📄 文件路径</th>
+              <th width="15%">📍 位置</th>
+              <th>💡 描述</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/prettier.config.js</td>
+                <td class="location">
+                  6:1
+                </td>
+                <td class="message">检测到 17 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/vite.config.js</td>
+                <td class="location">
+                  1:1
+                </td>
+                <td class="message">检测到 16 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/router/routes.js</td>
+                <td class="location">
+                  1:1
+                </td>
+                <td class="message">检测到 107 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/store/index.js</td>
+                <td class="location">
+                  1:1
+                </td>
+                <td class="message">检测到 22 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/utils/const.js</td>
+                <td class="location">
+                  1:1
+                </td>
+                <td class="message">检测到 638 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/utils/gatekeeper_tools.js</td>
+                <td class="location">
+                  1:1
+                </td>
+                <td class="message">检测到 11 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/utils/index.js</td>
+                <td class="location">
+                  1:1
+                </td>
+                <td class="message">检测到 10 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/utils/menu.js</td>
+                <td class="location">
+                  1:1
+                </td>
+                <td class="message">检测到 9 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/utils/notice.ts</td>
+                <td class="location">
+                  1:1
+                </td>
+                <td class="message">检测到 9 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/components/ImgUpload/index.vue</td>
+                <td class="location">
+                  2:1
+                </td>
+                <td class="message">检测到 60 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/components/LoadSelect/index.vue</td>
+                <td class="location">
+                  1:1
+                </td>
+                <td class="message">检测到 30 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/components/LoadSelect/load-select-modal.vue</td>
+                <td class="location">
+                  1:1
+                </td>
+                <td class="message">检测到 173 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/components/SearchBar/index.vue</td>
+                <td class="location">
+                  1:1
+                </td>
+                <td class="message">检测到 64 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/Home/index.vue</td>
+                <td class="location">
+                  2:1
+                </td>
+                <td class="message">检测到 18 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/components/SearchBar/components/NumberRange.vue</td>
+                <td class="location">
+                  1:1
+                </td>
+                <td class="message">检测到 45 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/components/SearchBar/utils/transform-presets.ts</td>
+                <td class="location">
+                  1:1
+                </td>
+                <td class="message">检测到 12 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/AIOptimizer/manager.vue</td>
+                <td class="location">
+                  1:1
+                </td>
+                <td class="message">检测到 31 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/AIOptimizer/records.vue</td>
+                <td class="location">
+                  1:1
+                </td>
+                <td class="message">检测到 80 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/AIOptimizer/work.vue</td>
+                <td class="location">
+                  1:1
+                </td>
+                <td class="message">检测到 61 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/s3Upload/index.vue</td>
+                <td class="location">
+                  1:1
+                </td>
+                <td class="message">检测到 25 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/creative/form.vue</td>
+                <td class="location">
+                  2:1
+                </td>
+                <td class="message">检测到 19 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/creative/index.vue</td>
+                <td class="location">
+                  2:1
+                </td>
+                <td class="message">检测到 30 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/creative/upload.vue</td>
+                <td class="location">
+                  1:1
+                </td>
+                <td class="message">检测到 55 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/Video/index.vue</td>
+                <td class="location">
+                  2:1
+                </td>
+                <td class="message">检测到 278 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/tags/index.vue</td>
+                <td class="location">
+                  2:1
+                </td>
+                <td class="message">检测到 120 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/tags/level.vue</td>
+                <td class="location">
+                  2:1
+                </td>
+                <td class="message">检测到 28 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/Task/form.vue</td>
+                <td class="location">
+                  2:1
+                </td>
+                <td class="message">检测到 93 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/Task/index.vue</td>
+                <td class="location">
+                  2:1
+                </td>
+                <td class="message">检测到 184 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/AIOptimizer/dialogs/work-create-modal.vue</td>
+                <td class="location">
+                  1:1
+                </td>
+                <td class="message">检测到 11 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/AIOptimizer/dialogs/work-record-modal.vue</td>
+                <td class="location">
+                  1:1
+                </td>
+                <td class="message">检测到 39 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/creative/components/addTagsModal.vue</td>
+                <td class="location">
+                  2:1
+                </td>
+                <td class="message">检测到 31 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/creative/components/createModal.vue</td>
+                <td class="location">
+                  2:1
+                </td>
+                <td class="message">检测到 46 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/creative/components/CreativeList.vue</td>
+                <td class="location">
+                  2:1
+                </td>
+                <td class="message">检测到 252 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/creative/components/weightHistoryModal.vue</td>
+                <td class="location">
+                  2:1
+                </td>
+                <td class="message">检测到 64 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/tags/Modals/addSubLevelModal.vue</td>
+                <td class="location">
+                  2:1
+                </td>
+                <td class="message">检测到 26 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/tags/Modals/createModal.vue</td>
+                <td class="location">
+                  2:1
+                </td>
+                <td class="message">检测到 38 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/Task/components/create-task-modal.vue</td>
+                <td class="location">
+                  1:1
+                </td>
+                <td class="message">检测到 17 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/Task/components/task-base-info.vue</td>
+                <td class="location">
+                  1:1
+                </td>
+                <td class="message">检测到 13 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/Task/components/task-header-info.vue</td>
+                <td class="location">
+                  1:1
+                </td>
+                <td class="message">检测到 20 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/Task/components/task-table.vue</td>
+                <td class="location">
+                  1:1
+                </td>
+                <td class="message">检测到 37 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/Task/services/errorService.js</td>
+                <td class="location">
+                  1:1
+                </td>
+                <td class="message">检测到 12 个 props，建议减少组件参数</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/Task/services/taskStrategy.js</td>
+                <td class="location">
+                  1:1
+                </td>
+                <td class="message">检测到 14 个 props，建议减少组件参数</td>
+              </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    
+      <div class="rule-section">
+        <div class="rule-header">
+          <h2 class="rule-title">
+            🟡
             &nbsp;large-function
+            <span class="category-badge">📂 js</span>
           </h2>
           <span class="severity-badge severity-warning">warning</span>
         </div>
@@ -212,7 +587,408 @@
         <div class="rule-header">
           <h2 class="rule-title">
             🟡
+            &nbsp;no-deep-watch
+            <span class="category-badge">📂 vue</span>
+          </h2>
+          <span class="severity-badge severity-warning">warning</span>
+        </div>
+        
+        <table>
+          <thead>
+            <tr>
+              <th width="40%">📄 文件路径</th>
+              <th width="15%">📍 位置</th>
+              <th>💡 描述</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/composables/useTableScroll.js</td>
+                <td class="location">
+                  106:5
+                </td>
+                <td class="message">检测到 deep watch，建议拆分 watch 或使用 computed</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/components/LoadSelect/index.vue</td>
+                <td class="location">
+                  76:1
+                </td>
+                <td class="message">检测到 deep watch，建议拆分 watch 或使用 computed</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/components/LoadSelect/index.vue</td>
+                <td class="location">
+                  85:1
+                </td>
+                <td class="message">检测到 deep watch，建议拆分 watch 或使用 computed</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/components/LoadSelect/index.vue</td>
+                <td class="location">
+                  100:1
+                </td>
+                <td class="message">检测到 deep watch，建议拆分 watch 或使用 computed</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/components/SearchBar/index.vue</td>
+                <td class="location">
+                  269:1
+                </td>
+                <td class="message">检测到 deep watch，建议拆分 watch 或使用 computed</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/components/SearchBar/index.vue</td>
+                <td class="location">
+                  279:1
+                </td>
+                <td class="message">检测到 deep watch，建议拆分 watch 或使用 computed</td>
+              </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    
+      <div class="rule-section">
+        <div class="rule-header">
+          <h2 class="rule-title">
+            🟡
+            &nbsp;no-direct-dom
+            <span class="category-badge">📂 vue</span>
+          </h2>
+          <span class="severity-badge severity-warning">warning</span>
+        </div>
+        
+        <table>
+          <thead>
+            <tr>
+              <th width="40%">📄 文件路径</th>
+              <th width="15%">📍 位置</th>
+              <th>💡 描述</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/composables/useTableScroll.js</td>
+                <td class="location">
+                  32:26
+                </td>
+                <td class="message">检测到直接 DOM 操作，建议使用 ref</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/composables/useTableScroll.js</td>
+                <td class="location">
+                  35:24
+                </td>
+                <td class="message">检测到直接 DOM 操作，建议使用 ref</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/composables/useTableScroll.js</td>
+                <td class="location">
+                  41:18
+                </td>
+                <td class="message">检测到直接 DOM 操作，建议使用 ref</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/composables/useTableScroll.js</td>
+                <td class="location">
+                  47:24
+                </td>
+                <td class="message">检测到直接 DOM 操作，建议使用 ref</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/composables/useTableScroll.js</td>
+                <td class="location">
+                  50:25
+                </td>
+                <td class="message">检测到直接 DOM 操作，建议使用 ref</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/composables/useTableScroll.js</td>
+                <td class="location">
+                  53:24
+                </td>
+                <td class="message">检测到直接 DOM 操作，建议使用 ref</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/composables/useTableScroll.js</td>
+                <td class="location">
+                  56:26
+                </td>
+                <td class="message">检测到直接 DOM 操作，建议使用 ref</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/mixins/tableScrollMixin.js</td>
+                <td class="location">
+                  79:28
+                </td>
+                <td class="message">检测到直接 DOM 操作，建议使用 ref</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/mixins/tableScrollMixin.js</td>
+                <td class="location">
+                  82:26
+                </td>
+                <td class="message">检测到直接 DOM 操作，建议使用 ref</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/mixins/tableScrollMixin.js</td>
+                <td class="location">
+                  88:20
+                </td>
+                <td class="message">检测到直接 DOM 操作，建议使用 ref</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/mixins/tableScrollMixin.js</td>
+                <td class="location">
+                  94:26
+                </td>
+                <td class="message">检测到直接 DOM 操作，建议使用 ref</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/mixins/tableScrollMixin.js</td>
+                <td class="location">
+                  97:27
+                </td>
+                <td class="message">检测到直接 DOM 操作，建议使用 ref</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/mixins/tableScrollMixin.js</td>
+                <td class="location">
+                  100:26
+                </td>
+                <td class="message">检测到直接 DOM 操作，建议使用 ref</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/mixins/tableScrollMixin.js</td>
+                <td class="location">
+                  103:28
+                </td>
+                <td class="message">检测到直接 DOM 操作，建议使用 ref</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/components/ImgUpload/index.vue</td>
+                <td class="location">
+                  105:22
+                </td>
+                <td class="message">检测到直接 DOM 操作，建议使用 ref</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/components/ImgUpload/index.vue</td>
+                <td class="location">
+                  116:16
+                </td>
+                <td class="message">检测到直接 DOM 操作，建议使用 ref</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/components/ImgUpload/index.vue</td>
+                <td class="location">
+                  116:16
+                </td>
+                <td class="message">检测到直接 DOM 操作，建议使用 ref</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/Task/services/errorService.js</td>
+                <td class="location">
+                  3:21
+                </td>
+                <td class="message">检测到直接 DOM 操作，建议使用 ref</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/Task/services/errorService.js</td>
+                <td class="location">
+                  6:25
+                </td>
+                <td class="message">检测到直接 DOM 操作，建议使用 ref</td>
+              </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    
+      <div class="rule-section">
+        <div class="rule-header">
+          <h2 class="rule-title">
+            🟡
+            &nbsp;large-component
+            <span class="category-badge">📂 vue</span>
+          </h2>
+          <span class="severity-badge severity-warning">warning</span>
+        </div>
+        
+        <table>
+          <thead>
+            <tr>
+              <th width="40%">📄 文件路径</th>
+              <th width="15%">📍 位置</th>
+              <th>💡 描述</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/utils/const.js</td>
+                <td class="location">
+                  1:1
+                </td>
+                <td class="message">组件文件过大 (634 行)，建议拆分组件</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/creative/upload.vue</td>
+                <td class="location">
+                  1:1
+                </td>
+                <td class="message">组件文件过大 (496 行)，建议拆分组件</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/Task/form.vue</td>
+                <td class="location">
+                  2:1
+                </td>
+                <td class="message">组件文件过大 (842 行)，建议拆分组件</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/creative/components/CreativeList.vue</td>
+                <td class="location">
+                  2:1
+                </td>
+                <td class="message">组件文件过大 (506 行)，建议拆分组件</td>
+              </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    
+      <div class="rule-section">
+        <div class="rule-header">
+          <h2 class="rule-title">
+            🟡
+            &nbsp;duplicate-import
+            <span class="category-badge">📂 js</span>
+          </h2>
+          <span class="severity-badge severity-warning">warning</span>
+        </div>
+        
+        <table>
+          <thead>
+            <tr>
+              <th width="40%">📄 文件路径</th>
+              <th width="15%">📍 位置</th>
+              <th>💡 描述</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/components/LoadSelect/index.vue</td>
+                <td class="location">
+                  1:1
+                </td>
+                <td class="message">模块 &#34;vue&#34; 被重复 import</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/creative/form.vue</td>
+                <td class="location">
+                  2:1
+                </td>
+                <td class="message">模块 &#34;@/utils/const&#34; 被重复 import</td>
+              </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    
+      <div class="rule-section">
+        <div class="rule-header">
+          <h2 class="rule-title">
+            🟡
+            &nbsp;no-inline-style
+            <span class="category-badge">📂 vue</span>
+          </h2>
+          <span class="severity-badge severity-warning">warning</span>
+        </div>
+        
+        <table>
+          <thead>
+            <tr>
+              <th width="40%">📄 文件路径</th>
+              <th width="15%">📍 位置</th>
+              <th>💡 描述</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/components/LoadSelect/load-select-modal.vue</td>
+                <td class="location">
+                  1:1
+                </td>
+                <td class="message">检测到 inline style，建议使用 class</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/Video/index.vue</td>
+                <td class="location">
+                  2:1
+                </td>
+                <td class="message">检测到 inline style，建议使用 class</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/creative/components/CreativeList.vue</td>
+                <td class="location">
+                  2:1
+                </td>
+                <td class="message">检测到 inline style，建议使用 class</td>
+              </tr>
+            
+              <tr>
+                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/creative/components/weightHistoryModal.vue</td>
+                <td class="location">
+                  2:1
+                </td>
+                <td class="message">检测到 inline style，建议使用 class</td>
+              </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    
+      <div class="rule-section">
+        <div class="rule-header">
+          <h2 class="rule-title">
+            🟡
             &nbsp;no-any
+            <span class="category-badge">📂 ts</span>
           </h2>
           <span class="severity-badge severity-warning">warning</span>
         </div>
@@ -427,46 +1203,8 @@
         <div class="rule-header">
           <h2 class="rule-title">
             🟡
-            &nbsp;duplicate-import
-          </h2>
-          <span class="severity-badge severity-warning">warning</span>
-        </div>
-        
-        <table>
-          <thead>
-            <tr>
-              <th width="40%">📄 文件路径</th>
-              <th width="15%">📍 位置</th>
-              <th>💡 描述</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-              <tr>
-                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/components/LoadSelect/index.vue</td>
-                <td class="location">
-                  1:1
-                </td>
-                <td class="message">模块 &#34;vue&#34; 被重复 import</td>
-              </tr>
-            
-              <tr>
-                <td class="file-path">E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/creative/form.vue</td>
-                <td class="location">
-                  2:1
-                </td>
-                <td class="message">模块 &#34;@/utils/const&#34; 被重复 import</td>
-              </tr>
-            
-          </tbody>
-        </table>
-      </div>
-    
-      <div class="rule-section">
-        <div class="rule-header">
-          <h2 class="rule-title">
-            🟡
             &nbsp;no-console-log
+            <span class="category-badge">📂 js</span>
           </h2>
           <span class="severity-badge severity-warning">warning</span>
         </div>
@@ -546,6 +1284,7 @@
           <h2 class="rule-title">
             🔵
             &nbsp;unmanaged-timeout
+            <span class="category-badge">📂 js</span>
           </h2>
           <span class="severity-badge severity-info">info</span>
         </div>
