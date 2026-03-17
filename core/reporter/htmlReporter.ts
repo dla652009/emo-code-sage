@@ -4,6 +4,7 @@ import { AnalysisResult } from '../analyzer/types';
 import { Reporter, ReporterOptions } from './types';
 import { logger } from '../../utils/logger';
 import { reportTemplateStr } from './templates/reportTemplate';
+import { sortGroupedResults } from './utils';
 
 export class HtmlReporter implements Reporter {
   name = 'html';
@@ -23,11 +24,20 @@ export class HtmlReporter implements Reporter {
       {} as Record<string, AnalysisResult[]>
     );
 
+    // 对分组结果进行排序 (Error > Warning > Info)
+    // 转换为数组以便模板遍历时保持顺序
+    const sortedGroupedResults = sortGroupedResults(groupedResults).map(([ruleName, issues]) => ({
+      ruleName,
+      issues,
+      severity: issues[0].severity || 'info'
+    }));
+
     // 准备模板数据
     const templateData = {
       timestamp,
       totalIssues: results.length,
-      groupedResults
+      groupedResults, // 保留原始对象以防模板需要
+      sortedGroupedResults // 新增排序后的数组供新模板使用
     };
 
     try {

@@ -43,6 +43,7 @@ export class AstAnalyzer {
 
             const result: AnalysisResult = {
               ruleName: rule.name,
+              severity: rule.severity || 'warning',
               filePath: cleanFilePath,
               message
             };

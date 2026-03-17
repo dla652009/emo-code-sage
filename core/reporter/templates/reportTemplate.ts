@@ -3,133 +3,218 @@ export const reportTemplateStr = `<!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>代码分析报告</title>
+  <title>代码分析报告 - Emo Code Sage</title>
   <style>
+    :root {
+      --primary-color: #3498db;
+      --success-color: #2ecc71;
+      --warning-color: #f39c12;
+      --error-color: #e74c3c;
+      --info-color: #3498db;
+      --text-color: #2c3e50;
+      --bg-color: #f5f7fa;
+      --card-bg: #ffffff;
+      --border-color: #ecf0f1;
+    }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       line-height: 1.6;
-      color: #333;
+      color: var(--text-color);
       max-width: 1200px;
       margin: 0 auto;
-      padding: 20px;
-      background-color: #f5f7fa;
+      padding: 40px 20px;
+      background-color: var(--bg-color);
     }
     .header {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      text-align: center;
     }
     .header h1 {
-      margin-top: 0;
-      color: #2c3e50;
+      margin: 0;
+      font-size: 2.5em;
+      font-weight: 700;
     }
     .meta-info {
-      color: #666;
+      margin-top: 10px;
+      opacity: 0.8;
       font-size: 0.9em;
     }
-    .summary-box {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #e74c3c;
-      color: white;
-      border-radius: 4px;
-      font-weight: bold;
-      margin-top: 10px;
+    .summary-cards {
+      display: flex;
+      gap: 20px;
+      margin-top: 20px;
+      justify-content: center;
     }
-    .summary-box.success {
-      background-color: #2ecc71;
+    .summary-card {
+      background: rgba(255,255,255,0.2);
+      padding: 10px 20px;
+      border-radius: 8px;
+      backdrop-filter: blur(5px);
     }
     .rule-section {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
+      background-color: var(--card-bg);
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      margin-bottom: 25px;
+      transition: transform 0.2s;
+    }
+    .rule-section:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .rule-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 15px;
+      margin-bottom: 15px;
     }
     .rule-title {
-      color: #2980b9;
-      border-bottom: 2px solid #ecf0f1;
-      padding-bottom: 10px;
-      margin-top: 0;
+      color: var(--text-color);
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
+    .severity-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.85em;
+      font-weight: 600;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .severity-error { background-color: var(--error-color); box-shadow: 0 2px 4px rgba(231, 76, 60, 0.3); }
+    .severity-warning { background-color: var(--warning-color); box-shadow: 0 2px 4px rgba(243, 156, 18, 0.3); }
+    .severity-info { background-color: var(--info-color); box-shadow: 0 2px 4px rgba(52, 152, 219, 0.3); }
+    
     table {
       width: 100%;
-      border-collapse: collapse;
+      border-collapse: separate;
+      border-spacing: 0;
       margin-top: 15px;
-    }
-    th, td {
-      padding: 12px;
-      text-align: left;
-      border-bottom: 1px solid #ddd;
     }
     th {
       background-color: #f8f9fa;
+      padding: 12px 15px;
+      text-align: left;
       font-weight: 600;
+      color: #7f8c8d;
+      border-bottom: 2px solid var(--border-color);
     }
-    tr:hover {
-      background-color: #f5f5f5;
+    td {
+      padding: 12px 15px;
+      border-bottom: 1px solid var(--border-color);
+      vertical-align: top;
+    }
+    tr:last-child td {
+      border-bottom: none;
+    }
+    tr:hover td {
+      background-color: #f8f9fa;
     }
     .file-path {
-      font-family: monospace;
+      font-family: 'Consolas', 'Monaco', monospace;
       color: #e67e22;
-      word-break: break-all;
+      font-weight: 500;
     }
     .location {
-      font-family: monospace;
-      color: #7f8c8d;
+      font-family: 'Consolas', 'Monaco', monospace;
+      color: #95a5a6;
       white-space: nowrap;
+      font-size: 0.9em;
+    }
+    .message {
+      color: #34495e;
     }
     .success-message {
       text-align: center;
-      padding: 40px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 60px;
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .success-icon {
+      font-size: 4em;
+      margin-bottom: 20px;
+      display: block;
     }
   </style>
 </head>
 <body>
   <div class="header">
-    <h1>代码分析报告</h1>
+    <h1>🔮 Emo Code Sage 报告</h1>
     <div class="meta-info">生成时间: <%= timestamp %></div>
-    <div class="summary-box <%= totalIssues === 0 ? 'success' : '' %>">
-      总计发现问题: <%= totalIssues %> 个
+    <div class="summary-cards">
+      <div class="summary-card">
+        <span style="font-size: 1.2em">🔍</span> 发现问题: <strong><%= totalIssues %></strong>
+      </div>
+      <div class="summary-card">
+        <span style="font-size: 1.2em">🛡️</span> 涉及规则: <strong><%= sortedGroupedResults ? sortedGroupedResults.length : Object.keys(groupedResults).length %></strong>
+      </div>
     </div>
   </div>
 
   <% if (totalIssues === 0) { %>
     <div class="success-message">
-      <h2>🎉 恭喜！未发现任何问题。</h2>
-      <p>您的代码质量非常棒！</p>
+      <span class="success-icon">🎉</span>
+      <h2>完美！代码质量非常棒</h2>
+      <p>本次扫描未发现任何问题，继续保持！</p>
     </div>
   <% } else { %>
-    <% for (const ruleName in groupedResults) { %>
+    <% 
+      // 兼容旧逻辑，如果没有 sortedGroupedResults 则手动转换
+      const entries = typeof sortedGroupedResults !== 'undefined' 
+        ? sortedGroupedResults 
+        : Object.keys(groupedResults).map(name => ({
+            ruleName: name, 
+            issues: groupedResults[name],
+            severity: groupedResults[name][0].severity || 'warning'
+          }));
+    %>
+
+    <% entries.forEach(function(entry) { %>
       <div class="rule-section">
-        <h2 class="rule-title">规则: <code><%= ruleName %></code> (<%= groupedResults[ruleName].length %> 个问题)</h2>
+        <div class="rule-header">
+          <h2 class="rule-title">
+            <% if (entry.severity === 'error') { %>🔴<% } else if (entry.severity === 'warning') { %>🟡<% } else { %>🔵<% } %>
+            &nbsp;<%= entry.ruleName %>
+          </h2>
+          <span class="severity-badge severity-<%= entry.severity %>"><%= entry.severity %></span>
+        </div>
+        
         <table>
           <thead>
             <tr>
-              <th>文件</th>
-              <th width="100">位置</th>
-              <th>描述</th>
+              <th width="40%">📄 文件路径</th>
+              <th width="15%">📍 位置</th>
+              <th>💡 描述</th>
             </tr>
           </thead>
           <tbody>
-            <% groupedResults[ruleName].forEach(function(issue) { %>
+            <% entry.issues.forEach(function(issue) { %>
               <tr>
                 <td class="file-path"><%= issue.filePath %></td>
                 <td class="location">
                   <%= issue.location ? issue.location.line + ':' + issue.location.column : '-' %>
                 </td>
-                <td><%= issue.message %></td>
+                <td class="message"><%= issue.message %></td>
               </tr>
             <% }); %>
           </tbody>
         </table>
       </div>
-    <% } %>
+    <% }); %>
   <% } %>
 </body>
 </html>`;

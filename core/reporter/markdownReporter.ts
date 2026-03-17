@@ -2,6 +2,7 @@ import fs from 'fs/promises';
 import { AnalysisResult } from '../analyzer/types';
 import { Reporter, ReporterOptions } from './types';
 import { logger } from '../../utils/logger';
+import { sortGroupedResults } from './utils';
 
 export class MarkdownReporter implements Reporter {
   name = 'markdown';
@@ -34,8 +35,14 @@ export class MarkdownReporter implements Reporter {
         {} as Record<string, AnalysisResult[]>
       );
 
-      for (const [ruleName, issues] of Object.entries(groupedResults)) {
-        content += `### 🚫 规则: \`${ruleName}\`\n\n`;
+      // 使用工具函数进行排序 (Error > Warning > Info)
+      const sortedEntries = sortGroupedResults(groupedResults);
+
+      for (const [ruleName, issues] of sortedEntries) {
+        const severity = issues[0].severity;
+        const icon = severity === 'error' ? '🔴' : severity === 'warning' ? '🟡' : '🔵';
+
+        content += `### ${icon} 规则: \`${ruleName}\` (${severity.toUpperCase()})\n\n`;
         content += `> 发现 **${issues.length}** 处违规\n\n`;
         content += `| 📄 文件路径 | 📍 位置 | 💡 描述 |\n`;
         content += `| :--- | :---: | :--- |\n`;

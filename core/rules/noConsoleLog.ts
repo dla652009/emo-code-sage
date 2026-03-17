@@ -3,6 +3,7 @@ import { Rule, RuleContext } from '../analyzer/types';
 
 export const noConsoleLogRule: Rule = {
   name: 'no-console-log',
+  severity: 'warning',
   description: '禁止在代码中保留 console.log',
   analyze(sourceFile: SourceFile, context: RuleContext) {
     // 找到所有的函数调用表达式

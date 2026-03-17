@@ -1,5 +1,7 @@
 import { SourceFile, Node } from 'ts-morph';
 
+export type Severity = 'error' | 'warning' | 'info';
+
 export interface RuleContext {
   /**
    * 当前分析的文件路径
@@ -21,6 +23,12 @@ export interface Rule {
   name: string;
 
   /**
+   * 规则严重程度
+   * @default 'warning'
+   */
+  severity?: Severity;
+
+  /**
    * 规则描述
    */
   description?: string;
@@ -38,6 +46,11 @@ export interface AnalysisResult {
    * 触发结果的规则名称
    */
   ruleName: string;
+
+  /**
+   * 规则严重程度
+   */
+  severity: Severity;
 
   /**
    * 相关的文件路径

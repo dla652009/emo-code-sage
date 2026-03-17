@@ -35,7 +35,15 @@ export async function analyzeProject(root: string) {
   if (results.length > 0) {
     results.forEach(result => {
       const loc = result.location ? `:${result.location.line}:${result.location.column}` : '';
-      logger.warn(`[${result.ruleName}] ${result.filePath}${loc} - ${result.message}`);
+      const message = `[${result.ruleName}] ${result.filePath}${loc} - ${result.message}`;
+
+      if (result.severity === 'error') {
+        logger.error(message);
+      } else if (result.severity === 'warning') {
+        logger.warn(message);
+      } else {
+        logger.info(message);
+      }
     });
   } else {
     logger.success(`🎉 未发现任何问题。`);
