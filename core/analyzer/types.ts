@@ -2,7 +2,8 @@ import { SourceFile, Node } from 'ts-morph';
 
 export type Severity = 'error' | 'warning' | 'info';
 export type Category = 'js' | 'ts' | 'vue';
-export interface RuleContext {
+
+export interface RuleContext<TOptions = any> {
   /**
    * 当前分析的文件路径
    */
@@ -14,9 +15,14 @@ export interface RuleContext {
    * @param node 相关的 AST 节点 (可选)
    */
   report(message: string, node?: Node): void;
+
+  /**
+   * 规则配置选项
+   */
+  options?: TOptions;
 }
 
-export interface Rule {
+export interface Rule<TOptions = any> {
   /**
    * 规则名称
    */
@@ -39,16 +45,26 @@ export interface Rule {
   description?: string;
 
   /**
+   * 默认选项
+   */
+  defaultOptions?: TOptions;
+
+  /**
+   * 运行时选项 (由配置系统注入)
+   */
+  options?: TOptions;
+
+  /**
    * 规则执行主体
    * @param sourceFile 当前处理的 ts-morph SourceFile
    * @param context 分析上下文
    */
-  analyze(sourceFile: SourceFile, context: RuleContext): void;
+  analyze(sourceFile: SourceFile, context: RuleContext<TOptions>): void;
 }
 
 export interface AnalysisResult {
   /**
-   * 触发结果的规则名称
+   * 规则名称
    */
   ruleName: string;
 
@@ -58,22 +74,22 @@ export interface AnalysisResult {
   category: Category;
 
   /**
-   * 规则严重程度
+   * 严重程度
    */
   severity: Severity;
 
   /**
-   * 相关的文件路径
+   * 文件路径
    */
   filePath: string;
 
   /**
-   * 结果描述信息
+   * 问题描述
    */
   message: string;
 
   /**
-   * 具体的代码位置信息（行号、列号等）
+   * 位置信息
    */
   location?: {
     line: number;

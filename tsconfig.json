@@ -16,6 +16,6 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true
   },
-  "include": ["core/**/*", "bin/**/*", "utils/**/*"],
+  "include": ["core/**/*", "bin/**/*", "utils/**/*", "scripts/**/*"],
   "exclude": ["node_modules", "dist", "**/*.test.ts"]
 }

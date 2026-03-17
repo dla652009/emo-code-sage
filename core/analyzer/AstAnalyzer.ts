@@ -37,6 +37,7 @@ export class AstAnalyzer {
         // 构建当前规则执行的上下文
         const context: RuleContext = {
           filePath,
+          options: rule.options || rule.defaultOptions, // 优先使用注入的选项，否则使用默认选项
           report: (message: string, node?: Node) => {
             // 清理可能存在的虚拟后缀（如 Vue 文件的 __virtual_script.js）
             const cleanFilePath = filePath.replace(/__virtual_script\.(ts|js|tsx|jsx)$/, '');

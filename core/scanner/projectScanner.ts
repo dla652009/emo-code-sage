@@ -1,6 +1,3 @@
-/**
- * 项目扫描器
- */
 import fs from 'fs';
 import fg from 'fast-glob';
 import path from 'path';
@@ -8,7 +5,13 @@ import { logger } from '../../utils/logger';
 
 export interface ScannerOptions {
   /**
-   * 要扫描的文件扩展名
+   * 自定义 glob 模式
+   * 如果提供，将忽略 extensions 选项
+   */
+  patterns?: string[];
+
+  /**
+   * 要扫描的文件扩展名 (当 patterns 未提供时生效)
    * @default ['js', 'ts', 'vue', 'jsx', 'tsx']
    */
   extensions?: string[];
@@ -44,7 +47,7 @@ export class ProjectScanner {
    * @returns 匹配的文件路径列表
    */
   async scan(targetPath: string): Promise<string[]> {
-    const { extensions, ignore, absolute } = this.options;
+    const { extensions, ignore, absolute, patterns } = this.options;
 
     // 确保路径格式正确
     const absolutePath = path.resolve(targetPath);
@@ -59,10 +62,16 @@ export class ProjectScanner {
       }
 
       // 如果是目录，则进行 glob 扫描
-      // 构建 glob 模式，例如: "**/*.{js,ts,vue,jsx,tsx}"
-      const pattern = `**/*.{${extensions?.join(',')}}`;
+      let scanPatterns: string[];
 
-      const files = await fg(pattern, {
+      if (patterns && patterns.length > 0) {
+        scanPatterns = patterns;
+      } else {
+        // 构建默认 glob 模式
+        scanPatterns = [`**/*.{${extensions?.join(',')}}`];
+      }
+
+      const files = await fg(scanPatterns, {
         cwd: absolutePath,
         ignore,
         absolute,
@@ -77,7 +86,7 @@ export class ProjectScanner {
   }
 }
 
-export function scanProject(root: string) {
-  const scanner = new ProjectScanner();
+export function scanProject(root: string, options?: ScannerOptions) {
+  const scanner = new ProjectScanner(options);
   return scanner.scan(root);
 }
