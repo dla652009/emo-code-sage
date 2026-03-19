@@ -1,6 +1,6 @@
 # 📊 代码分析报告
 
-> 🕒 生成时间: 2026/3/17 15:22:15
+> 🕒 生成时间: 2026/3/17 16:03:33
 
 ## 📈 概览
 
@@ -47,10 +47,10 @@
 | `E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/creative/index.vue` | 2:1 | 检测到 30 个 props，建议减少组件参数 |
 | `E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/creative/upload.vue` | 1:1 | 检测到 55 个 props，建议减少组件参数 |
 | `E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/s3Upload/index.vue` | 1:1 | 检测到 25 个 props，建议减少组件参数 |
-| `E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/Task/form.vue` | 2:1 | 检测到 93 个 props，建议减少组件参数 |
-| `E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/Task/index.vue` | 2:1 | 检测到 184 个 props，建议减少组件参数 |
 | `E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/tags/index.vue` | 2:1 | 检测到 120 个 props，建议减少组件参数 |
 | `E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/tags/level.vue` | 2:1 | 检测到 28 个 props，建议减少组件参数 |
+| `E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/Task/form.vue` | 2:1 | 检测到 93 个 props，建议减少组件参数 |
+| `E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/Task/index.vue` | 2:1 | 检测到 184 个 props，建议减少组件参数 |
 | `E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/Video/index.vue` | 2:1 | 检测到 278 个 props，建议减少组件参数 |
 | `E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/AIOptimizer/dialogs/work-create-modal.vue` | 1:1 | 检测到 11 个 props，建议减少组件参数 |
 | `E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/AIOptimizer/dialogs/work-record-modal.vue` | 1:1 | 检测到 39 个 props，建议减少组件参数 |
@@ -58,14 +58,14 @@
 | `E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/creative/components/createModal.vue` | 2:1 | 检测到 46 个 props，建议减少组件参数 |
 | `E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/creative/components/CreativeList.vue` | 2:1 | 检测到 252 个 props，建议减少组件参数 |
 | `E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/creative/components/weightHistoryModal.vue` | 2:1 | 检测到 64 个 props，建议减少组件参数 |
+| `E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/tags/Modals/addSubLevelModal.vue` | 2:1 | 检测到 26 个 props，建议减少组件参数 |
+| `E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/tags/Modals/createModal.vue` | 2:1 | 检测到 38 个 props，建议减少组件参数 |
 | `E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/Task/components/create-task-modal.vue` | 1:1 | 检测到 17 个 props，建议减少组件参数 |
 | `E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/Task/components/task-base-info.vue` | 1:1 | 检测到 13 个 props，建议减少组件参数 |
 | `E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/Task/components/task-header-info.vue` | 1:1 | 检测到 20 个 props，建议减少组件参数 |
 | `E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/Task/components/task-table.vue` | 1:1 | 检测到 37 个 props，建议减少组件参数 |
 | `E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/Task/services/errorService.js` | 1:1 | 检测到 12 个 props，建议减少组件参数 |
 | `E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/Task/services/taskStrategy.js` | 1:1 | 检测到 14 个 props，建议减少组件参数 |
-| `E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/tags/Modals/addSubLevelModal.vue` | 2:1 | 检测到 26 个 props，建议减少组件参数 |
-| `E:/my app/emo-code-sage/examples/h2o_volume_surge/src/pages/modules/tags/Modals/createModal.vue` | 2:1 | 检测到 38 个 props，建议减少组件参数 |
 
 ### 🟡 规则: `large-function` | 📂 `JS` | (WARNING)
 
