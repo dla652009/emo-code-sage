@@ -1,5 +1,5 @@
 import { Project, SourceFile, ScriptTarget, ModuleKind } from 'ts-morph';
-import { logger } from '../../utils/logger';
+import { logger } from '@utils/logger';
 
 export class TsParser {
   private project: Project;

@@ -18,7 +18,7 @@ export function sortResults(results: AnalysisResult[]): AnalysisResult[] {
     if (weightA !== weightB) {
       return weightB - weightA;
     }
-    
+
     // 2. 按规则名称排序
     if (a.ruleName !== b.ruleName) {
       return a.ruleName.localeCompare(b.ruleName);
@@ -37,10 +37,10 @@ export function sortGroupedResults(groupedResults: Record<string, AnalysisResult
     // 取每组第一个问题的严重程度作为该组的严重程度
     const severityA = issuesA[0]?.severity || 'info';
     const severityB = issuesB[0]?.severity || 'info';
-    
+
     const weightA = severityWeight[severityA] || 0;
     const weightB = severityWeight[severityB] || 0;
-    
+
     return weightB - weightA;
   });
 }

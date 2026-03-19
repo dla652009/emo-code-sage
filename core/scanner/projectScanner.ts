@@ -1,7 +1,7 @@
 import fs from 'fs';
 import fg from 'fast-glob';
 import path from 'path';
-import { logger } from '../../utils/logger';
+import { logger } from '@utils/logger';
 
 export interface ScannerOptions {
   /**

@@ -2,7 +2,7 @@ import fs from 'fs/promises';
 import ejs from 'ejs';
 import { AnalysisResult } from '../analyzer/types';
 import { Reporter, ReporterOptions } from './types';
-import { logger } from '../../utils/logger';
+import { logger } from '@utils/logger';
 import { reportTemplateStr } from './templates/reportTemplate';
 import { sortGroupedResults } from './utils';
 

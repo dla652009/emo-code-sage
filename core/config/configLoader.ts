@@ -1,7 +1,7 @@
 import { cosmiconfig } from 'cosmiconfig';
 import { UserConfig, ResolvedConfig, RuleConfigValue } from './types';
 import { recommendedPreset } from '../presets/recommended';
-import { logger } from '../../utils/logger';
+import { logger } from '@utils/logger';
 
 const MODULE_NAME = 'emocodesage';
 

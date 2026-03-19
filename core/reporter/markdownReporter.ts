@@ -1,7 +1,7 @@
 import fs from 'fs/promises';
 import { AnalysisResult } from '../analyzer/types';
 import { Reporter, ReporterOptions } from './types';
-import { logger } from '../../utils/logger';
+import { logger } from '@utils/logger';
 import { sortGroupedResults } from './utils';
 
 export class MarkdownReporter implements Reporter {

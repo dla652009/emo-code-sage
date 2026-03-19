@@ -1,7 +1,7 @@
 import { parse, compileScript } from '@vue/compiler-sfc';
 import { SourceFile } from 'ts-morph';
 import { TsParser } from './tsParser';
-import { logger } from '../../utils/logger';
+import { logger } from '@utils/logger';
 
 export class VueParser {
   private tsParser: TsParser;

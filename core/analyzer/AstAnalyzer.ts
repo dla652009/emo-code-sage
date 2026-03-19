@@ -1,6 +1,6 @@
 import { SourceFile, Node } from 'ts-morph';
 import { Rule, AnalysisResult, RuleContext } from './types';
-import { logger } from '../../utils/logger';
+import { logger } from '@utils/logger';
 
 export class AstAnalyzer {
   private rules: Rule[] = [];
